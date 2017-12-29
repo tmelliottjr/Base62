@@ -1,10 +1,10 @@
-#URL Shortener
+# URL Shortener
 A simple base62 encoder/decoder for URL shortening.
 
-##Installation
+## Installation
 Coming Soon™
 
-##Usage
+## Usage
 ```javascript
 const urlShortener = require('url-shortener')
  
