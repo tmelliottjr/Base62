@@ -1,5 +1,4 @@
 module.exports = (function () {
-  'use strict';
   const base = 62;
   const alpha = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
