@@ -12,12 +12,18 @@ Coming Soon™
 const urlShortener = require('url-shortener');
  
 urlShortener.encode(123456789, (err, res) => {
-  if (err) throw err;
-  console.log(res); // Xk0M8
+  if (err) {
+    throw err;
+  } else {
+    console.log(res); // Xk0M8
+  }  
 });
  
 urlShortener.decode('Xk0M8', (err, res) => {
-  if (err) throw err;
-  console.log(res); // 123456789
+  if (err) { 
+    throw err;
+  } else {
+    console.log(res); // 123456789
+  }  
 });
 ```
