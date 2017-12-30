@@ -1,4 +1,7 @@
 # URL Shortener
+[![Build Status](https://travis-ci.org/tmelliottjr/url-shortener.svg?branch=master)](https://travis-ci.org/tmelliottjr/url-shortener)
+  
+  
 A simple base62 encoder/decoder for URL shortening.
 
 ## Installation
