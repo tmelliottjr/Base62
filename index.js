@@ -2,9 +2,29 @@ module.exports = (function () {
   const base = 62;
   const alpha = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
-  function encode(id, cb) {
-    if (typeof id !== 'number' || Number.isNaN(id)) {
-      cb(new Error(`Invalid Input. Expected 'number', received '${Number.isNaN(id) ? 'NaN' : typeof id}'`));
+  function InvalidInputException(expected, actual) {
+    this.expected = expected;
+    this.actual = actual;
+    this.toString = function () {
+      return `Expected type '${this.expected}', received typed '${this.actual}' instead.`;
+    };
+  }
+
+  InvalidInputException.prototype = Object.create(Error.prototype);
+  InvalidInputException.prototype.name = 'InvalidInputException';
+
+  function encode(id) {
+    if (typeof id !== 'number' || Number.isNaN(id) || !Number.isInteger(id)) {
+      let type = '';
+      if (Number.isNaN(id)) {
+        type = 'NaN';
+      } else if (typeof id === 'number' && !Number.isInteger(id)) {
+        type = `${typeof id} non-integer`;
+      } else {
+        type = typeof id;
+      }
+
+      throw new InvalidInputException('number', type);
     } else {
       let remainder = 0;
       let result = '';
@@ -16,13 +36,13 @@ module.exports = (function () {
         result += alpha.charAt(remainder);
       }
 
-      cb(null, result);
+      return result;
     }
   }
 
-  function decode(str, cb) {
+  function decode(str) {
     if (typeof str !== 'string') {
-      cb(new Error(`Invalid Input. Expected 'string', received '${typeof str}'`));
+      throw new InvalidInputException('string', typeof str);
     } else {
       let result = 0;
 
@@ -30,7 +50,7 @@ module.exports = (function () {
         result = (result * base) + alpha.indexOf(str.charAt(i));
       }
 
-      cb(null, result);
+      return result;
     }
   }
 
