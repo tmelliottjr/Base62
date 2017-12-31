@@ -24,9 +24,9 @@ try {
   encoded = urlShortener.encode(123456789.10);
 } catch (e) {
   if (e.name == 'InvalidInputException') {
-    console.log(e.toString()) // Expected type 'number', received typed 'number non-integer' instead.
+    console.log(e.toString()); // Expected type 'number', received typed 'number non-integer' instead.
   } else {
-    console.log('Unkown Error Occured')
+    console.log('Unkown Error Occured');
   }
 }
   
@@ -35,9 +35,9 @@ try {
   decoded = urlShortener.decode(12345);
 } catch (e) {
   if (e.name == 'InvalidInputException') {
-    console.log(e.toString()) // Expected type 'string', received typed 'number' instead.
+    console.log(e.toString()); // Expected type 'string', received typed 'number' instead.
   } else {
-    console.log('Unknown Error Occured')
+    console.log('Unknown Error Occured');
   }
 }
 ```
