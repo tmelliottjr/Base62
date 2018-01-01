@@ -6,7 +6,7 @@ module.exports = (function () {
     this.expected = expected;
     this.actual = actual;
     this.toString = function () {
-      return `Expected type '${this.expected}', received typed '${this.actual}' instead.`;
+      return `Expected ${this.expected}, received ${this.actual}.`;
     };
   }
 
@@ -41,6 +41,12 @@ module.exports = (function () {
   }
 
   function decode(str) {
+    [...str].forEach((c) => {
+      if (!alpha.includes(c)) {
+        throw new InvalidInputException('string', 'Invalid Characters');
+      }
+    });
+
     if (typeof str !== 'string') {
       throw new InvalidInputException('string', typeof str);
     } else {
