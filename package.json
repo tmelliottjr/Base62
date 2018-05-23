@@ -1,7 +1,7 @@
 {
-  "name": "url-shortener",
+  "name": "Base62",
   "version": "1.0.0",
-  "description": "Base62 Encoder/Decoder for URL shortening",
+  "description": "Base62 Encoder/Decoder",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tmelliottjr/url-shortener.git"
+    "url": "git+https://github.com/tmelliottjr/Base62.git"
   },
   "author": "tmelliottjr",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tmelliottjr/url-shortener/issues"
+    "url": "https://github.com/tmelliottjr/Base62/issues"
   },
-  "homepage": "https://github.com/tmelliottjr/url-shortener#readme"
+  "homepage": "https://github.com/tmelliottjr/Base62#readme"
 }
