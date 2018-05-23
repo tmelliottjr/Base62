@@ -1,4 +1,4 @@
-# URL Shortener
+# Base62 Encoder/Decoder
 [![Build Status](https://travis-ci.org/tmelliottjr/Base62.svg?branch=master)](https://travis-ci.org/tmelliottjr/url-shortener)
   
   
