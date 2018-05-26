@@ -9,7 +9,7 @@ Coming Soon™
 
 ## Usage
 ```javascript
-const base62 = require('url-shortener');
+const base62 = require('Base62');
  
 let encoded;
  
